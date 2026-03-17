@@ -11,6 +11,8 @@
     <nav>
         <a href="{{ route('recipes.index') }}">All Recipes</a>
         <a href="{{ route('recipes.create') }}">Create Recipe</a>
+        <a href="{{ route('login-demo') }}">login</a>
+        <a href="{{ route('logout-demo') }}">logout</a>
     </nav>
     @if(session('success'))
     <div>{{ session('success') }}</div>
