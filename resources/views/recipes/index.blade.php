@@ -17,6 +17,8 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Category</th>
+                    <th>Tags</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -24,6 +26,12 @@
                 @foreach ($recipes as $recipe)
                     <tr>
                         <td>{{ $recipe->name }}</td>
+                        <td>{{ $recipe->category->name}}</td>
+                        <td>
+                            @foreach ($recipe->tags as $t)
+                                <span>{{ $t->name }}</span>
+                            @endforeach
+                        </td>
                         <td><a href="{{ route('recipes.show', $recipe) }}">View</a></td>
                     </tr>
                 @endforeach
